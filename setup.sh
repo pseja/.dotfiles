@@ -15,6 +15,7 @@ pkgs=(
 arch_pkgs=(
 	eza	# ls replacement
 	nodejs	# for nvim copilot
+	nvm 	# node version manager
 )
 ubuntu_pkgs=(
 	# nodejs - TODO: https://www.reddit.com/r/MeshCentral/comments/1kkhnas/whats_the_command_to_install_node_on_ubuntu/
