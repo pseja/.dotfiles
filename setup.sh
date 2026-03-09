@@ -4,6 +4,7 @@
 pkgs=(
 	bat	# cat replacement
 	btop	# resource monitor
+	eza	# ls replacement
 	fzf	# fuzzy finder
 	nvim	# text editor
 	ripgrep	# search tool
@@ -13,13 +14,11 @@ pkgs=(
 
 # distro specific package names
 arch_pkgs=(
-	eza	# ls replacement
 	nodejs	# for nvim copilot
 	nvm 	# node version manager
 )
 ubuntu_pkgs=(
 	# nodejs - TODO: https://www.reddit.com/r/MeshCentral/comments/1kkhnas/whats_the_command_to_install_node_on_ubuntu/
-	# eza - TODO: https://dario.griffo.io/posts/how-to-install-updated-eza-in-debian/
 )
 
 install_packages() {
