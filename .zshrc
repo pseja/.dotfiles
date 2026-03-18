@@ -56,3 +56,5 @@ source /usr/share/nvm/init-nvm.sh
 # init starship
 eval "$(starship init zsh)"
 
+export XDG_CONFIG_HOME=~/.config/
+
