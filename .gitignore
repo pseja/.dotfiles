@@ -1,0 +1,4 @@
+# tmux
+## only allow the plugin manager submodule
+.config/tmux/plugins
+!.config/tmux/plugins/tpm/**
