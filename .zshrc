@@ -1,3 +1,8 @@
+# autostart tmux if not already in a tmux session and in an interactive shell (also dodge vscode terminal)
+if [[ -z "$TMUX" && -n "$PS1" && "$TERM_PROGRAM" != "vscode" ]]; then
+    exec tmux new-session -A -s main
+fi
+
 # zinit (zsh plugin manager)
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
@@ -50,11 +55,15 @@ alias vim='nvim'
 # fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-# init nvm
-source /usr/share/nvm/init-nvm.sh
-
 # init starship
 eval "$(starship init zsh)"
 
 export XDG_CONFIG_HOME=~/.config/
+
+export NVM_DIR="$HOME/.config//nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# run tmux
+tmux
 
