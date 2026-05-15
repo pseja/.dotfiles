@@ -8,7 +8,7 @@ You'll need to install these manually first:
 
 ## Installation
 ```bash
-git clone --recursive https://github.com/pseja/.dotfiles ~/.dotfiles
+git clone --recursive git@github.com:pseja/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 bash setup.sh
 stow --adopt .
