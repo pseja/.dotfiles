@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # general package names
 pkgs=(
@@ -6,7 +7,7 @@ pkgs=(
 	btop	# resource monitor
 	eza	# ls replacement
 	fzf	# fuzzy finder
-	nvim	# text editor
+	# nvim	# text editor
 	ripgrep	# search tool
 	stow	# symlink manager
 	zsh	# shell
