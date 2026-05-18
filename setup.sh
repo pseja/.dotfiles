@@ -3,29 +3,44 @@ set -e
 
 # general package names
 pkgs=(
-	bat	# cat replacement
-	btop	# resource monitor
-	eza	# ls replacement
-	fzf	# fuzzy finder
-	# nvim	# text editor
+	bat	    # cat replacement
+	btop    # resource monitor
+	curl	# for downloading nvm and zed install scripts
+	eza	    # ls replacement
+	fzf	    # fuzzy finder
 	ripgrep	# search tool
-	stow	# symlink manager
-	zsh	# shell
+	stow    # symlink manager
+	zsh	    # shell
 )
 
 # distro specific package names
 arch_pkgs=(
-	nodejs	# for nvim copilot
-	nvm 	# node version manager
+	nodejs # for nvim copilot
+	nvm    # node version manager
+	zed    # editor
 )
 ubuntu_pkgs=(
-	# nodejs - TODO: https://www.reddit.com/r/MeshCentral/comments/1kkhnas/whats_the_command_to_install_node_on_ubuntu/
+	build-essential
 )
+
+get_nvm_node() {
+	echo "Installing nvm and Node.js (LTS)..."
+	curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+	. "$HOME/.config/nvm/nvm.sh"
+	nvm install 24
+}
+
+get_zed() {
+	echo "Installing Zed..."
+	curl -f https://zed.dev/install.sh | sh
+}
 
 install_packages() {
 	if command -v apt &> /dev/null; then
 		sudo apt update && sudo apt upgrade
 		sudo apt install "${pkgs[@]}" "${ubuntu_pkgs[@]}"
+		get_nvm_node
+		get_zed
 	elif command -v pacman &> /dev/null; then
 		sudo pacman -Syu --needed "${pkgs[@]}" "${arch_pkgs[@]}"
 	else
