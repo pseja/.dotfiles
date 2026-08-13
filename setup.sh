@@ -5,16 +5,21 @@ set -e
 pkgs=(
 	bat	    # cat replacement
 	btop    # resource monitor
+    cmake
 	curl	# for downloading install scripts
 	eza	    # ls replacement
 	fzf	    # fuzzy finder
+    git
+    make
 	ripgrep	# search tool
 	stow    # symlink manager
+	wget	# for downloading install scripts
 	zsh	    # shell
 )
 
 # distro specific package names
 arch_pkgs=(
+    base-devel
 	nodejs
 	nvm    # node version manager
 )
