@@ -68,3 +68,6 @@ eval "$(pyenv init -)"
 # opencode
 export PATH=/home/pseja/.opencode/bin:$PATH
 
+# herdr
+export PATH="/home/pseja/.local/bin:$PATH"
+
