@@ -69,6 +69,11 @@ get_starship() {
 	curl -sS https://starship.rs/install.sh | sh
 }
 
+get_pyenv() {
+    echo "Installing Pyenv"
+    curl -fsSL https://pyenv.run | bash
+}
+
 get_herdr() {
     echo "Installing Herdr"
     curl -fsSL https://herdr.dev/install.sh | sh
@@ -80,9 +85,10 @@ get_opencode() {
 }
 
 get_all() {
-    get_starship
-    getherdr
-    getopencode
+    get_opencode
+    get_pyenv
+    get_herdr
+    get_opencode
 }
 
 main() {
