@@ -69,13 +69,29 @@ get_starship() {
 	curl -sS https://starship.rs/install.sh | sh
 }
 
+get_herdr() {
+    echo "Installing Herdr"
+    curl -fsSL https://herdr.dev/install.sh | sh
+}
+
+get_opencode() {
+    echo "Installing OpenCode"
+    curl -fsSL https://opencode.ai/install | bash
+}
+
+get_all() {
+    get_starship
+    getherdr
+    getopencode
+}
+
 main() {
 	install_packages
 	adopt
 
 	set_zsh_default
 
-	get_starship
+	get_all
 }
 
 main
