@@ -19,11 +19,13 @@ pkgs=(
 
 # distro specific package names
 arch_pkgs=(
+    fd         # find replacement
     base-devel
 	nodejs
-	nvm    # node version manager
+	nvm        # node version manager
 )
 ubuntu_pkgs=(
+    fd-find         # find replacement
 	build-essential
 )
 
@@ -38,6 +40,7 @@ install_packages() {
 	if command -v apt &> /dev/null; then
 		sudo apt update && sudo apt upgrade
 		sudo apt install "${pkgs[@]}" "${ubuntu_pkgs[@]}"
+
 		get_nvm_node
 	elif command -v pacman &> /dev/null; then
 		sudo pacman -Syu --needed "${pkgs[@]}" "${arch_pkgs[@]}"
