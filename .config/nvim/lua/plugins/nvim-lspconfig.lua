@@ -15,6 +15,7 @@ return {
             "clangd",
             "lua_ls",
             "marksman",
+            "neocmakelsp",
         })
     end
 }

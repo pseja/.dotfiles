@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-map('n', "<leader>ca", vim.lsp.buf.code_action, { desc = "Show available code actions" })
+-- map('n', "<leader>ca", vim.lsp.buf.code_action, { desc = "Show available code actions" })
 map('n', "<leader>rn", vim.lsp.buf.rename, { desc = "Smart rename" })
 
 -- better moving up and down
