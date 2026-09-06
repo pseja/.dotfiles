@@ -47,6 +47,7 @@ elif (( $+commands[pacman] )); then
     alias cat='bat -p'
 fi
 alias vim='nvim'
+alias lg='lazygit'
 
 # fzf key bindings and fuzzy completion
 source <(fzf --zsh)

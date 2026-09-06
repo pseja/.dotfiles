@@ -21,6 +21,7 @@ pkgs=(
 arch_pkgs=(
     fd         # find replacement
     base-devel
+    lazygit
 	nodejs
 	nvm        # node version manager
 )
