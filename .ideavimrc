@@ -1,0 +1,86 @@
+let mapleader = ' '
+
+""" plugins
+set surround
+set multiple-cursors
+set commentary
+
+""" common
+set relativenumber
+set clipboard+=unnamedplus
+set scrolloff=5
+set incsearch
+
+""" mappings
+nmap <leader>r <Action>(RenameElement)
+nmap <leader>z <Action>(ToggleZenMode)
+
+"" app
+nmap <leader>ar <Action>(Run)
+nmap <leader>ad <Action>(Debug)
+nmap <leader>as <Action>(Stop)
+
+"" yank
+nmap yr <Action>(CopyReference)
+
+"" formatting
+nmap <leader>fm <Action>(ReformatCode)
+nmap <leader>fo <Action>(OptimizeImports)
+
+"" window and tab management
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <leader>x <Action>(CloseContent)
+nmap <leader>X <Action>(CloseAllEditors)
+
+nmap <Tab> <Action>(NextTab)
+nmap <S-Tab> <Action>(PreviousTab)
+
+"" flash
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+" enhance vim f (find for char in characters to the right of the current cursor)
+nmap f <Action>(flash.find)
+xmap f <Action>(flash.find)
+" enhance vim F (find for char in characters to the left of the current cursor)
+nmap F <Action>(flash.find_backward)
+xmap F <Action>(flash.find_backward)
+" enhance vim t (till for char in characters to the right of the current cursor)
+nmap t <Action>(flash.till)
+xmap t <Action>(flash.till)
+" enhance vim T (till for char in characters to the left of the current cursor)
+nmap T <Action>(flash.till_backward)
+xmap T <Action>(flash.till_backward)
+" enhance vim ; (Repeat the last f/F/t/T search)
+nmap ; <Action>(flash.repeat)
+xmap ; <Action>(flash.repeat)
+" enhance vim , (Repeat the last f/F/t/T search backward)
+nmap , <Action>(flash.repeat_backward)
+xmap , <Action>(flash.repeat_backward)
+
+"" hover
+nmap gh <Action>(ShowHoverInfo)
+nmap <leader>ca <Action>(ShowErrorDescription)
+
+"" navigation
+nmap gd <Action>(GotoDeclaration)
+nmap gi <Action>(GotoImplementation)
+
+nmap <leader>fc <Action>(GotoClass)
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fs <Action>(GotoSymbol)
+nmap <leader>fa <Action>(GotoAction)
+nmap <leader>ft <Action>(TextSearchAction)
+
+"" git
+nmap gb <Action>(Annotate)
+nmap gn <Action>(VcsShowNextChangeMarker)
+nmap gp <Action>(VcsShowPrevChangeMarker)
+
+"" debugging
+nmap <leader>dd <Action>(Debug)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+
