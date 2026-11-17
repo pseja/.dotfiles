@@ -42,7 +42,7 @@ alias tree='eza --tree'
 if (( $+commands[apt-get] )); then
     alias cat='batcat -p'
     alias bat='batcat'
-    ln -s $(which fdfind) '~/.local/bin/fd'
+    ln -s "$(which fdfind)" "$HOME/.local/bin/fd"
 elif (( $+commands[pacman] )); then
     alias cat='bat -p'
 fi
